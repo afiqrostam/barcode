@@ -76,11 +76,11 @@
       <script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/barcodes/JsBarcode.code128.min.js"></script>
       <script>
         $(function(){
-          $('input').on('change',function(){
+          $('input[type="text"]').on('change',function(){
             var data=$('form').serializeArray().map(function(e){return e.value});
             if(data.length==1&&data.toString()==""){$('button.print').hide()}
             else{$('button.print').show()}});
-          $('input').trigger('change');
+          $('input[type="text"]').trigger('change');
           
           $('button.clear').on('click',function(){
             var input = $('form').children().first();
@@ -143,7 +143,8 @@
                   var clone = current.clone(true);
                   clone.find('input').val(e);
                   current.after(clone);
-                  current=clone}})},0)})
+                  current=clone}});
+            $('input[type="text"]').trigger('change')},0)})
         });
       </script>
   </body>
