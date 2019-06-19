@@ -106,12 +106,13 @@
             setTimeout(function(){
               var values = $txt.val().split(/\s+/);
               var current = $txt.parent();
-              if(values.length>100){
+              if(values.length>250){
                 $('div.update').append(
                   $('<div class="alert alert-warning alert-dismissible fade show" role="alert">').html(
-                    'list greater than 100').append(
+                    'list greater than 250').append(
                     $('<button type="button" class="close" data-dismiss="alert" aria-label="Close">').html(
                       '<span aria-hidden="true">&times;</span>')));
+                $txt.val('');
                 return}
               values.forEach(function(e,i){
                 if(i==0){$txt.val(e)}
