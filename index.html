@@ -110,7 +110,7 @@
                 temp.after(clone);
                 if((i)%3==0){clone.before($('<div class="w-100">'))}
                 temp=clone}
-              temp.find('.card-body').append($('<img id="code-'+i+'" width="100%">'));
+              temp.find('.card-body').append($('<svg id="code-'+i+'" class="img-fluid">'));
               JsBarcode("#code-"+i,e,{
                         background: "#ffffff",
                         width: 4,
