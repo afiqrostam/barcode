@@ -17,7 +17,7 @@
         <div class="col">
           <div class="row py-2 d-flex justify-content-between">
             <p>VAMS CODE :</p>
-            <button class="btn btn-light btn-sm clear" type="button">clear all</button>
+            <button class="btn btn-light clear" type="button">clear all</button>
           </div>
           <form class="row">
             <div class="input-group">
@@ -30,17 +30,41 @@
           </form>
         </div>
         <div class="col">
-          <div class="control">
-            <button class="btn btn-light print" type="button">print</button>
-          </div>
-          <div class="update">
+          <div class="update"></div>
+          <div class="card">
+            <h5 class="card-header">Print controls</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item bg-white">barcode order
+                <div class="btn-group btn-block btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-light">
+                    <input type="radio" name="print" autocomplete="off" checked="">
+                    <svg viewBox="0 0 34 34">
+                      <rect y="1" width="10" height="32" rx="2" x="1"></rect>
+                      <rect y="1" width="10" height="32" rx="2" x="12"></rect>
+                      <rect y="1" width="10" height="32" rx="2" x="23"></rect>
+                    </svg>
+                  </label>
+                  <label class="btn btn-light active">
+                    <input type="radio" name="print" autocomplete="off">
+                    <svg viewBox="0 0 34 34">
+                      <rect y="1" width="32" height="10" rx="2" x="1"></rect>
+                      <rect y="12" width="32" height="10" rx="2" x="1"></rect>
+                      <rect y="23" width="32" height="10" rx="2" x="1"></rect>
+                    </svg>
+                  </label>
+                </div>
+              </li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+            <button class="btn btn-light print float-right" type="button" style="">print</button>
           </div>
         </div>
       </div>
       </div>
       <div class="d-none d-print-block container my-5">
         <div class="card-deck my-5 text-center codes">
-          <div class="card col mb-4">
+          <div class="card col mb-4 border-0">
             <div class="card-body"></div>
           </div>
         </div>
