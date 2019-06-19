@@ -111,7 +111,7 @@
                 if((i)%3==0){clone.before($('<div class="w-100">'))}
                 temp=clone}
               temp.find('.card-body').append($('<img id="code-'+i+'" width="100%">'));
-              JsBarcode("#code-"+i,e.toUpperCase(),{
+              JsBarcode("#code-"+i,e,{
                         background: "#ffffff",
                         width: 4,
                         height: 200,
@@ -138,7 +138,7 @@
                 $txt.val('');
                 return}
               values.forEach(function(e,i){
-                if(i==0){$txt.val(e)}
+                if(i==0){$txt.val(e.toUpperCase())}
                 else{
                   var clone = current.clone(true);
                   clone.find('input').val(e);
