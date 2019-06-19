@@ -45,6 +45,12 @@
       <script src="https://cdn.jsdelivr.net/jsbarcode/3.6.0/barcodes/JsBarcode.code128.min.js"></script>
       <script>
         $(function(){
+          $('input').on('change',function(){
+            var data=$('form').serializeArray().map(function(e){return e.value});
+            if(data.length==1&&data.toString()==""){$('button.print').hide()}
+            else{$('button.print').show()}
+          });
+          $('input').trigger('change');
           $('button.remove').on('click',function(){
             var parent = $(this).parent().parent();
             if(parent.parent().children().length>1){parent.remove()}});
