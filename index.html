@@ -28,7 +28,15 @@
             </div>
           </form>
         </div>
-        <div class="col"><button class="btn btn-light print" type="button">print</button></div>
+        <div class="col">
+          <div class="control">
+            <button class="btn btn-light clear" type="button">clear</button>
+            &nbsp;
+            <button class="btn btn-light print" type="button">print</button>
+          </div>
+          <div class="update">
+          </div>
+        </div>
       </div>
       </div>
       <div class="d-none d-print-block container my-5">
@@ -48,9 +56,15 @@
           $('input').on('change',function(){
             var data=$('form').serializeArray().map(function(e){return e.value});
             if(data.length==1&&data.toString()==""){$('button.print').hide()}
-            else{$('button.print').show()}
-          });
+            else{$('button.print').show()}});
           $('input').trigger('change');
+          
+          $('button.clear').on('click',function(){
+            var input = $('form').children().first();
+            input.siblings().remove();
+            input.find('input').val('')
+            input.find('input').trigger('change')});
+          
           $('button.remove').on('click',function(){
             var parent = $(this).parent().parent();
             if(parent.parent().children().length>1){parent.remove()}});
@@ -92,6 +106,13 @@
             setTimeout(function(){
               var values = $txt.val().split(/\s+/);
               var current = $txt.parent();
+              if(values.length>100){
+                $('div.update').append(
+                  $('<div class="alert alert-warning alert-dismissible fade show" role="alert">').html(
+                    'list greater than 100').append(
+                    $('<button type="button" class="close" data-dismiss="alert" aria-label="Close">').html(
+                      '<span aria-hidden="true">&times;</span>')));
+                return}
               values.forEach(function(e,i){
                 if(i==0){$txt.val(e)}
                 else{
