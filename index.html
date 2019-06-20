@@ -106,7 +106,7 @@
                   temp=clone}}});
             window.print()});
           
-          $('input').bind('paste',null,function(e){
+          $('input[type="text"]').bind('paste',null,function(e){
             var $txt = $(this);
             setTimeout(function(){
               var values = $txt.val().split(/\s+/);
