@@ -77,3 +77,8 @@ function inp_paste(a){
         current.after(clone);
         current=clone}});
     $('input[type="text"]').trigger('change')},0)}
+
+function inp_paste_(e){
+  e.preventDefault();
+  console.log((e.originalEvent || e).clipboardData.getData('text/plain').split('\n').map(
+    function(f){return f.split('\t')}))}
